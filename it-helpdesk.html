@@ -16,6 +16,11 @@ a{color:var(--ink)}
 a:hover{color:var(--signal)}
 button{font-family:inherit}
 button:focus-visible,a:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+button[aria-pressed]{transition:background-color .18s ease,box-shadow .18s ease,transform .18s ease}
+button[aria-pressed]:hover{transform:translateY(-1px);box-shadow:0 3px 0 0 var(--ink)}
+button[aria-pressed="false"]:hover{background-color:var(--rule) !important}
+button[aria-pressed]:active{transform:translateY(0);box-shadow:none}
+@media (prefers-reduced-motion: reduce){button[aria-pressed]{transition:none}button[aria-pressed]:hover{transform:none}}
 .qdot{width:10px;height:10px;border-radius:50%;transition:opacity .3s ease,background .3s ease}
 .stack{display:flex;flex-wrap:wrap-reverse;align-content:flex-start;gap:3px;width:23px;height:480px}
 .nav-links{display:flex;gap:30px;align-items:center}
